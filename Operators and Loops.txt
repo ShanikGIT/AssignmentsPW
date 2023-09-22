@@ -1,0 +1,59 @@
+﻿1.What are the Conditional Operators in Java?
+Ans. Conditional operators are essential tools for creating dynamic and flexible code in Java. They allow developers to make decisions based on various conditions and control the flow of execution. By understanding the different types of conditional operators in Java, developers can write efficient and concise code.
+
+
+2.What are the types of operators based on the number of operands?
+Ans.There are three types of operators based on the number of operands-
+A.Unary 
+B.Binary
+c.Ternary 
+
+
+3. What is the use of Switch case in Java programming?
+Ans. ‘The Switch case’ in Java is a way to make decisions in your code based on the value of a specific expression. It allows you to have different blocks of code to execute depending on the value of that expression.
+
+
+4. What are the priority levels of arithmetic operation in Java?
+Ans. In Java, arithmetic operations have priority levels, which determine the order in which they are evaluated when multiple operations are combined in a single expression.
+A.Parentheses
+B.Unary Operators
+C.Multiplication *, Division /, Remainder %
+D.Addition +, Subtraction -
+
+
+5. What are the conditional Statements and use of conditional statements in Java?
+Ans. Conditional statements in Java are used to make decisions in your code based on certain conditions or expressions. They allow you to execute different blocks of code depending on whether a condition is true or false. Java provides several types of conditional statements:
+A.If-else
+B.If-else if
+C.switch case
+These conditional statements help you write programs that can adapt and respond to changing data and user interactions, making your code more dynamic and functional.
+
+
+6. What is the syntax of if else statement?
+Ans.   if (condition)
+ {
+    // Code to execute if the condition is true
+ } 
+else
+ {
+    // Code to execute if the condition is false
+ }
+7. What are the 3 types of iterative statements in java?
+Ans.There are three types of iterative statements in java
+A.for loop
+B.while loop
+C.do-while loop
+
+
+8. Write the difference between for loop and do-while loop?
+Ans. There is main difference between for loop and do while loop java in its evaluation
+for Loop: In a for loop, the loop condition is evaluated before entering the loop. If the condition is initially false, the loop body is never executed.
+do-While Loop: In a do-while loop, the loop body is executed at least once, and then the loop condition is evaluated. If the condition is false, the loop exits; otherwise, it continues to execute.
+
+
+9. Write a program to print numbers from 1 to 10.
+int i;
+   for(i=1; i<=10; i++)
+   {
+    System.out.println(i);
+   }
