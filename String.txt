@@ -1,0 +1,315 @@
+﻿Ass.1
+1.Write a java program to Reverse a string without using the inbuilt method.
+Ans. Program:
+import java.util.*;
+class Rev
+{
+public static void main(String[] args)
+
+
+{
+   Scanner scan = new Scanner(System.in);
+   System.out.println("Enter the string");
+   String str = scan.nextLine();
+   String reverse = "";
+
+
+   for(int i = str.length() - 1;i>=0; i--)
+   {
+      char a = str.charAt(i);
+      reverse = reverse+a;
+   }
+   System.out.println(reverse);
+}
+}
+
+
+2.Write a java program to know whether the given string is palindrome.
+Ans.Program
+import java.util.Scanner;
+
+
+public class Palin
+{
+    public static void main(String[] args) {
+   Scanner scan = new Scanner(System.in);
+   System.out.println("Enter the string");
+   String str = scan.nextLine();
+   String reverse = "";
+
+
+   for(int i = str.length() - 1;i>=0; i--)
+   {
+      char a = str.charAt(i);
+      reverse = reverse+a;
+   }
+  if(str.equals(reverse))
+  {
+    System.out.println("Yes");
+  }
+  else{
+    System.out.println("No");
+  }
+}
+}
+
+
+
+
+3.Write a java program to convert upper case to lower case and vice versa.
+Ans.Program
+import java.util.Scanner;
+public class UpLo 
+{
+         public static void main(String[] args) 
+{
+        Scanner scan = new  Scanner(System.in);
+        System.out.println("Enter the string");
+        String str = scan.nextLine();
+        System.out.println(str.toUpperCase());
+        System.out.println(str.toLowerCase());
+}
+}
+
+
+
+
+4.Write a java program to remove a particular character from a String.
+Ans.Program
+import java.util.*;
+public class RemC
+{
+        public static void main(String[] args)
+{
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the string");
+        String str = scan.nextLine();
+        System.out.println("Enter the index no.");
+        int ind = scan.nextInt();
+        System.out.println(removeCharAt(str,ind));
+}
+        public static String removeCharAt(String s, int pos) {
+        return s.substring(0, pos) + s.substring(pos + 1);
+}
+}
+
+
+5.Write a java program to find the index of a substring.
+Ans.Program
+public class SubSInd
+{
+   public static void main(String[] args)
+{
+   
+           String str = "Hello readers";
+           int intIndex = str.indexOf("Hello");
+           
+           if(intIndex == - 1)
+           {
+              System.out.println("Not found");
+           }
+           else
+           {
+              System.out.println("Found at index " + intIndex);
+           }
+}
+}
+
+
+Ass.2
+1. What is a String in Java?
+Ans.String is a sequence of characters. But in Java, string is an object that represents a sequence of characters. The java.lang.String class is used to create a string object.
+
+
+2. Types of String are?
+Ans.In java Strings are classified into 2 types
+ Mutable String
+ Immutable String
+
+
+3. In how many ways can you create string objects in Java?
+Ans.There are two waÄs to create string objects in Java. One is using a new operator and another one is using string literals. The objects created using the new operator are stored in the heap memory  and objects created using string literals are stored in the string constant pool.
+String s1 = new String("abc"); //Creating string object using new operator
+String s2 = "abc"; //Creating string object using string literal
+
+
+4. What is a string constant pool?
+Ans. String objects are the most commonly used data objects in Java. Hence, Java has a special arrangement to store the string objects. String Constant Pool is one such arrangement.
+String Constant Pool is the heap memory space dedicated to storing string objects created with
+string literals. In the String Constant Pool, there will be no two string objects with the same content. When you use a string literal to create a string object, JVM first checks the object's content. If there is an object in the string constant pool with the same content, then it returns the reference to that object. It doesn't create a new object. If the content differs from the existing objects, nonevent is generated.
+
+
+5. What do you mean by "mutable" and "immutable" objects?
+Ans. Immutable objects are like constants. You can't modify them once they are created. They are final in nature. Whereas mutable objects are concerned, You can perform modifications on
+them.
+
+
+6. Where exactly is the string constant pool located in the memory?
+Ans.Inside the heap memory. JVM reserves some part of the heap memory to store string objects created using string literals. In Java, strings are special. String types receive special
+treatment in Java that other types do not. For example, to create the string objects, you do not need to use the "new" keyword. Whereas to create other types of objects, you have to use the "new" keyword. Like this, strings enjoy some special attention from Java. This attention is worth the while, because the strings are used almost everywhere while developing and kind of application.
+Ass.3
+1. Write a program to print a string entered by the user.
+Ans.
+import java.util.Scanner;
+class Ans{
+public static void main(String[] args){
+Scanner s = new Scanner(System.in);
+String a = s.next();
+System.out.println(a);
+}
+}
+
+
+
+
+2. How do you concatenate two strings in Java and give an example
+Ans.
+String str1 = "Hello";
+String str2 = "World";
+String str3 = str1 + str2;
+
+
+3. How do you find the length of a string in Java Explain with an example?
+Ans.
+String str = "example";
+int length = str.length();
+
+
+4. How do you compare two strings in Java?
+Ans.
+String str1 = "Hello";
+String str2 = "Hello";
+if (str1.equals(str2)) {
+System.out.println("The strings are equal");
+} else {
+System.out.println("The strings are not equal");
+}
+
+
+5. Write a program to find the length of the string "refrigerator".
+Ans.
+String a = "refrigerator";
+System.out.println(a.length());
+
+
+6. Write a program to check if the letter 'e' is present in the word 'Umbrella'.
+Ans.
+Ans: class Ans{
+public static void main(String[] args){
+String a = "Umbrella";
+boolean per = false;
+for(int i = 0;i<a.length();i++){
+if(a.charAt(i) == 'e'){
+per=true;
+break;
+}
+}
+System.out.println(per);
+}
+}
+7. Write a program to delete all consonants from the string "Hello,have a good day". (Take input from user)
+Ans.
+import java.util.Scanner;
+class delete
+{
+public static void main(String args[])
+{
+String s;
+int j=0;
+System.out.println("Enter a string");
+Scanner so=new Scanner(System.in);
+s= so.nextLine();
+char ch[]=new char[20];
+for(int i=0;i<s.length();i++)
+{
+if(s.charAt(i)=='a'||s.charAt(i)=='A'||s.charAt(i)=='e'||s.charAt(i)=='E'||s.charAt(i)=='i'||s.charAt(i)=='I'||s.charAt(i)=='o'||s.charAt(i)=='O'||s.charAt(i)=='U'|| s.charAt(i)=='u')
+{
+ch[j++]=s.charAt(i);
+}
+else
+{
+continue;
+Assignment Solutions
+
+
+Cracking the Coding Interview in JAVA - Foundation
+
+
+}
+}
+for(int i=0;i<j;i++)
+{
+System.out.print(ch[i]);
+}
+System.out.println();
+}
+}
+
+
+Ass.4
+1. What is Mutable String in Java Explain with an example
+Ans. The String class is immutable, which means that once a String object is created, its value cannot be changed. However, there are other classes in Java, such as StringBuilder and StringBuffer, which are mutable and can be used to manipulate strings.Here's an example of using a mutable string in Java with the StringBuilder class
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World"); // append method adds the string " World" to the end of sb
+
+
+System.out.println(sb); // prints "Hello World"
+In this example, we create a StringBuilder object sb with an initial value of "Hello". We then use the append method to add the string " World" to the end of sb. Finally, we print the value of sb,
+which is "Hello World".
+
+
+2. WAP to reverse a String - PWSKILLS.
+Ans.
+public class StringReverser
+ {
+public static void main(String[] args)
+ {
+String str = "PWSKILLS";
+String result = reverseString(str);
+System.out.println("The original string is: " + str);
+System.out.println("The reversed string is: " + result);
+}
+public static String reverseString(String str) {
+StringBuilder sb = new StringBuilder(str);
+sb.reverse();
+return sb.toString();
+}
+}
+
+
+3. WAP to reverse a sentence while preserving the position
+Ans.
+public class SentenceReverser1
+ {
+public static void main(String[] args) 
+{
+String str1="Think Twice";
+String str2="";
+String sarr[]=str1.split(" ");
+for(String elem: sarr)
+{
+for(int i=elem.length()-1;i>=0;i--)
+{
+str2=str2+elem.charAt(i);
+}
+str2=str2 +" ";
+}
+System.out.println(str2);
+}
+}
+
+
+4. WAP to sort a String Alphabetically
+Ans.
+import java.util.Arrays;
+class SortingOrder {
+static void sortString(String str) {
+char []arr = str.toCharArray();
+Arrays.sort(arr);
+System.out.print(String.valueOf(arr));
+}
+public static void main(String[] args) {
+String s = "aabbzzncedt";
+sortString(s);
+}
+}
