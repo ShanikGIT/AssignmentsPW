@@ -1,0 +1,115 @@
+﻿1.Write a java program to Reverse a string without using the inbuilt method.
+Ans. Program:
+import java.util.*;
+class Rev
+{
+public static void main(String[] args)
+
+
+{
+   Scanner scan = new Scanner(System.in);
+   System.out.println("Enter the string");
+   String str = scan.nextLine();
+   String reverse = "";
+
+
+   for(int i = str.length() - 1;i>=0; i--)
+   {
+      char a = str.charAt(i);
+      reverse = reverse+a;
+   }
+   System.out.println(reverse);
+}
+}
+
+
+2.Write a java program to know whether the given string is palindrome.
+Ans.Program
+import java.util.Scanner;
+
+
+public class Palin
+{
+    public static void main(String[] args) {
+   Scanner scan = new Scanner(System.in);
+   System.out.println("Enter the string");
+   String str = scan.nextLine();
+   String reverse = "";
+
+
+   for(int i = str.length() - 1;i>=0; i--)
+   {
+      char a = str.charAt(i);
+      reverse = reverse+a;
+   }
+  if(str.equals(reverse))
+  {
+    System.out.println("Yes");
+  }
+  else{
+    System.out.println("No");
+  }
+}
+}
+
+
+
+
+3.Write a java program to convert upper case to lower case and vice versa.
+Ans.Program
+import java.util.Scanner;
+public class UpLo 
+{
+         public static void main(String[] args) 
+{
+        Scanner scan = new  Scanner(System.in);
+        System.out.println("Enter the string");
+        String str = scan.nextLine();
+        System.out.println(str.toUpperCase());
+        System.out.println(str.toLowerCase());
+}
+}
+
+
+
+
+4.Write a java program to remove a particular character from a String.
+Ans.Program
+import java.util.*;
+public class RemC
+{
+        public static void main(String[] args)
+{
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the string");
+        String str = scan.nextLine();
+        System.out.println("Enter the index no.");
+        int ind = scan.nextInt();
+        System.out.println(removeCharAt(str,ind));
+}
+        public static String removeCharAt(String s, int pos) {
+        return s.substring(0, pos) + s.substring(pos + 1);
+}
+}
+
+
+5.Write a java program to find the index of a substring.
+Ans.Program
+public class SubSInd
+{
+   public static void main(String[] args)
+{
+   
+           String str = "Hello readers";
+           int intIndex = str.indexOf("Hello");
+           
+           if(intIndex == - 1)
+           {
+              System.out.println("Not found");
+           }
+           else
+           {
+              System.out.println("Found at index " + intIndex);
+           }
+}
+}
