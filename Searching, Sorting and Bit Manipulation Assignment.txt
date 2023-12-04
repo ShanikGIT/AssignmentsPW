@@ -1,0 +1,607 @@
+﻿Linear and Binary Search
+
+
+Q1. Given an array. Find the number X in the array. If the element is present, return the index of the element, else print “Element not found in array”. Input the size of array, array from user and the element X from user. Use Linear Search to find the element.
+Ans: Code
+public class Assignment
+{
+    public static int LinearSrch(int[] arr, int x)
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]==x)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int n = scan.nextInt();
+        int arr[] = new int[n];
+        System.out.println("Enter the elements -");
+        for(int i = 0; i<arr.length;i++)
+        {
+            arr[i] = scan.nextInt();
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.print("Enter the element to be searched: ");
+        int elem = scan.nextInt();
+        int ind = LinearSrch(arr,elem);
+        if(ind ==-1)
+        {
+            System.out.println("there is no such element ");
+        }
+        else
+        {
+             System.out.println("The Element is at index of : "+ind);
+        }    
+}
+}
+
+
+
+
+Output:
+Enter the size of the array: 5
+Enter the elements -
+34
+34
+65
+76
+78
+[34, 34, 65, 76, 78]
+Enter the element to be searched: 76
+The Element is at index: 3
+
+
+Q2. Given an array and an integer “target”, return the last occurrence of “target” in the array. If the target is not present return -1.
+Input 1: arr = [1 1 1 2 3 4 4 5 6 6 6 6] , target = 4 Output 1: 6
+Input 2: arr = [2 2 2 6 6 18 29 30 30 30] , target = 15 Output 2: -1
+Ans: Code
+public class Assignment
+{
+    public static int LastOcc(int[] arr, int x)
+    {
+         int temp=0,temp2=0,i;
+        for( i=0;i<arr.length;i++)
+        {
+           
+            if(arr[i]==x)
+            {
+                temp=arr[i];
+                temp2=i;
+            }
+            continue;
+        }
+        if(temp==x)
+        {
+           return temp2;
+        }
+
+
+        return -1;
+    }
+
+
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int n = scan.nextInt();
+        int arr[] = new int[n];
+        System.out.println("Enter the elements -");
+        for(int i = 0; i<arr.length;i++)
+        {
+            arr[i] = scan.nextInt();
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.print("Enter the element to be searched: ");
+        int elem = scan.nextInt();
+        int ind = LastOcc(arr,elem);
+        System.out.println(ind);
+}
+}
+
+
+
+
+Output:1
+Enter the size of the array: 12
+Enter the elements -
+1 1 1 2 3 4 4 5 6 6 6 6
+Enter the element to be searched: 4
+6
+Output:2
+Enter the size of the array: 12
+Enter the elements -
+2 2 2 6 6 18 29 30 30 30
+Enter the element to be searched: 15
+-1
+
+
+
+
+Q3. Given a sorted binary array, efficiently count the total number of 1’s in it.
+Input 1: arr = [0 0 0 0 1 1 1 1 1 1] Output 1: 6
+Input 2: arr = [0 0 0 0 0 1 1] Output 2: 2
+Ans: Code
+public class Assignment
+{
+    public static int OnesOcc(int[] arr)
+    {
+         int count=0;
+        for( int i=0;i<arr.length;i++)
+        {
+           if(arr[i]==1)
+            {
+               count++;
+            }
+        }
+       return count;
+    }
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int n = scan.nextInt();
+        int arr[] = new int[n];
+        System.out.println("Enter the elements -");
+        for(int i = 0; i<arr.length;i++)
+        {
+            arr[i] = scan.nextInt();
+        }
+        System.out.println(Arrays.toString(arr));
+       
+        int Occ = OnesOcc(arr);
+        System.out.println(Occ);
+    }
+}
+
+
+
+
+
+
+Output:1
+Enter the size of the array: 10
+Enter the elements -
+0 0 0 0 1 1 1 1 1 1
+6
+Output2:
+Enter the size of the array: 6
+Enter the elements -
+0 0 0 0 0 1 1
+2
+
+
+Q4. Given a sorted integer array containing duplicates, count occurrences of a given number. If the element is not found in the array, report that as well.
+Input: nums[] = [2, 5, 5, 5, 6, 6, 8, 9, 9, 9] target = 5
+Output: Target 5 occurs 3 times
+Input: nums[] = [2, 5, 5, 5, 6, 6, 8, 9, 9, 9] target = 6
+Output: Target 6 occurs 2 times
+Ans:Code
+public class Assignment
+{
+    public static int ElemOcc(int[] arr,int x)
+    {
+         int count=0;
+        for( int i=0;i<arr.length;i++)
+        {
+           if(arr[i]==x)
+            {
+               count++;
+               return count;
+            }
+        }
+       return -1;
+    }
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int n = scan.nextInt();
+        int arr[] = new int[n];
+        System.out.println("Enter the elements -");
+        for(int i = 0; i<arr.length;i++)
+        {
+            arr[i] = scan.nextInt();
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.print("Enter the element to be searched the occurence of : ");
+        int elem = scan.nextInt();
+        int Occ = ElemOcc(arr,elem);
+        if (elem==-1)
+        {
+            System.out.println("there is no such element");
+        }
+        else{
+        System.out.println(Occ);
+        }
+    }
+}
+
+
+Output 1:
+Enter the size of the array: 10
+Enter the elements -
+2  5  5  5  6  6  8 9 9 9
+Enter the element to be searched the occurrence of : 5
+3
+Output 2:
+Enter the size of the array: 10
+Enter the elements -
+2  5  5  5  6  6  8 9 9 9
+Enter the element to be searched the occurrence of : 6
+2
+
+
+
+
+Q5. Given a positive integer num, return true if num is a perfect square or false otherwise.
+A perfect square is an integer that is the square of an integer. In other words, it is the product of some integer with itself.
+
+
+import java.util.*;
+public class Assignment
+{
+    public static boolean  FindSquareRoot(int n)
+    {
+        if(n==1)
+        return true;
+        int low =0;
+        int high = n;
+     while(low<=high)
+        {
+        int mid=(low+high)/2;
+        int value = mid*mid;
+        if(value>n)
+        {
+            high = mid-1;
+        }
+        else if (value<n)
+        {
+       
+         low = mid+1;
+        }
+        else
+        {
+           return true;
+        }
+
+
+        }
+        return false;
+
+
+    }
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter The number ");
+        int n = scan.nextInt();
+        boolean result = FindSquareRoot(n);
+        System.out.println(result);
+    }
+}
+
+
+
+
+Output:
+Enter The number 24
+false
+Enter The number 25
+true
+
+
+Sorting in array
+Q1. Write a program to sort an array in descending order using bubble sort.
+Input Array {3,5,1,6,0}
+Output Array: {6, 5, 3, 1, 0}
+Ans:
+import java.io.*;
+import java.util.*;
+public class Sort {
+    // 0 based indexing used
+    public static void bubbleSort(int[] a) {
+        int n = a.length;
+
+
+        for (int i = 0; i < n; i++) {
+            boolean flag = false;
+
+
+            for (int j = 0; j < n - i - 1; j++) {
+                if (a[j] < a[j + 1]) {
+                    flag = true;
+                    // swap the values of a[j] and a[j+1]
+                    int temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                }
+            }
+            // No Swapping happened, array is sorted
+            if (!flag) {
+                return;
+            }
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of array");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter the elements of array");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        bubbleSort(arr);
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+
+
+Q2. WAP to sort an array in descending order using selection sort
+Input Array {3,5,1,6,0}
+Output Array: {6, 5, 3, 1, 0}
+Ans:
+import java.io.*;
+import java.util.*;
+
+
+public class Sort {
+    // 0 based indexing used
+    public static void selectionSort(int[] a) {
+        int n = a.length;
+
+
+        for (int i = 0; i < n - 1; i++)
+        // i represents the current index
+        {
+
+
+            // Find the maximum element in unsorted part of the array
+            int max_index = i;
+            for (int j = i + 1; j < n; j++) {
+                if (a[j] > a[max_index])
+                    max_index = j;
+            }
+
+
+            // Swap the found maximum element with the current element
+            if (max_index != i) {
+                int temp = a[max_index];
+                a[max_index] = a[i];
+                a[i] = temp;
+            }
+        }
+    }
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of array");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter the elements of array");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        selectionSort(arr);
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.print("\n");
+    }
+
+
+
+
+}
+
+
+Q3. WAP to sort an array in decreasing order using insertion sort
+Input Array {3,5,1,6,0}
+Output Array: {6, 5, 3, 1, 0}
+Ans:
+import java.io.*;
+import java.util.*;
+
+
+public class Sort {
+    public static void insertionSort(int[] a) {
+        int n = a.length;
+
+
+        for (int i = 1; i < n; i++) {
+            int j = i;
+
+
+            // Insert a[i] into sorted left part 0..i-1
+            while (j > 0 && a[j] > a[j - 1]) {
+
+
+                // Swap a[j] and a[j-1]
+                int temp = a[j];
+                a[j] = a[j - 1];
+                a[j - 1] = temp;
+
+
+                // Decrement j by 1
+                j--;
+            }
+        }
+    }
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of array");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter the elements of array");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        insertionSort(arr);
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+         System.out.print("\n ");
+    }
+}
+Q4. Find out how many pass would be required to sort the following array in decreasing order
+using bubble sort
+Input Array {3,5,1,6,0}
+Ans: 3 iterations are required
+Original Array is {3 5 1 6 0}
+In first iteration array is {5 3 6 1 0}
+In second iteration array is {5 6 3 1 0}
+In third iteration array is {6 5 3 1 0}
+
+
+Q5. Find out the number of iterations to sort the array in descending order using selection sort.
+Input Array {3,5,1,6,0}
+Ans: 3 iterations are required.
+Original Array is {3 5 1 6 0}
+In first iteration array is {6 5 1 3 0}
+In second iteration array is {6 5 1 3 0}
+In third iteration array is {6 5 3 1 0}
+Now the array is sorted.
+
+
+
+
+Number System
+Q1. 5 is the decimal number
+Ans;
+2 | 5
+—----
+2 | 2 1
+—----
+2 | 1 0
+Reading numbers is reverse order gives us 101 as the binary representation
+2. Number 10
+2 | 10
+—-----
+2 | 5 0
+—-----
+2 | 2 1
+—-----
+2 | 1 0
+Reading in reverse order from bottom to top gives us 1010 as the binary representation of 10.
+
+
+Q2. Number 15. Converting it in binary 1111, as its more than 1 set bits in the binary representation therefore it’s not a power of 2.
+Ans:Number 32. Converting it to binary 10000, as it has only 1 set bit, therefore its power of 2.
+
+
+Q3. Problem 1: Given a number. Using bit manipulation, check whether it is odd or even.
+Input 8, Even 3, False
+Ans:
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+
+
+public class Main
+{
+        public static void main(String[] args) {
+                int number;
+                 System.out.println("Enter the integer: ");
+ 
+        // Create Scanner object
+        Scanner s = new Scanner(System.in);
+ 
+        // Read the next integer from the screen
+        number = s.nextInt();
+        
+        if((number & 1) == 1) System.out.println("Given number is odd.");
+        else  System.out.println("Given number is even.");
+        }
+}
+
+
+Q4. Given a number, count the number of set bits in that number without using an extra space.
+Note : bit ‘1’ is also known as set bit.
+ANs:
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+
+
+public class Main
+{   public static int countSetBits(int n){
+        int count = 0;
+        while (n > 0) {
+            count += n & 1;
+            n >>= 1;
+        }
+        return count;
+    }
+        public static void main(String[] args) {
+                 int number;
+                 System.out.println("Enter the integer: ");
+ 
+        // Create Scanner object
+        Scanner s = new Scanner(System.in);
+ 
+        // Read the next integer from the screen
+        number = s.nextInt();
+        
+        int answer = countSetBits(number);
+        System.out.println("The number of set bits in the given number are " + answer);
+        }
+}
+
+
+Q5. Given an integer array, duplicates are present in it in a way that all duplicates appear an even
+number of times except one which appears an odd number of times. Find that odd appearing
+element in linear time and without using any extra memory.
+For example,
+Input : arr[] = [4, 3, 6, 2, 6, 4, 2, 3, 4, 3, 3]
+Output : The odd occurring element is 4.
+
+
+Ans:
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+
+
+
+
+public class Main
+{  public static int findOddOccuring(int[] arr)
+    {
+        int xor = 0;
+        for (int i: arr) {
+            xor = xor ^ i;
+        }
+        return xor;
+    }
+        public static void main(String[] args) {
+                int n;  
+        Scanner sc=new Scanner(System.in);  
+        System.out.print("Enter the number of elements you want to store: ");  
+        //reading the number of elements from the that we want to enter  
+        n=sc.nextInt();  
+        //creates an array in the memory of length 10  
+        int[] array = new int[10];  
+        System.out.println("Enter the elements of the array: ");  
+        for(int i=0; i<n; i++)  
+        {  
+        //reading array elements from the user   
+            array[i]=sc.nextInt();  
+        }
+     System.out.println("The odd occurring element is " + findOddOccuring(array));
+        }
+}
